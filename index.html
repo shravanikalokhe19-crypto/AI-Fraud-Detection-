@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Fraud Detection</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Sidebar with Summary -->
+<div class="sidebar">
+    <div class="card">
+        <h2>Total Transactions</h2>
+        <p id="totalTransactions">0</p>
+    </div>
+    <div class="card">
+        <h2>Total Safe</h2>
+        <p id="totalSafe">0</p>
+    </div>
+    <div class="card">
+        <h2>Total Suspicious</h2>
+        <p id="totalSuspicious">0</p>
+    </div>
+    <div class="card">
+        <h2>Total Fraud</h2>
+        <p id="totalFraud">0</p>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+    <h1>AI Fraud Detection</h1>
+
+    <form id="transactionForm">
+        <input type="number" id="amount" placeholder="Transaction Amount ($)" required>
+        <input type="number" id="time" placeholder="Transaction Hour (0-23)" required>
+        <select id="location" required>
+            <option value="">Select Location</option>
+            <option value="Local">Local</option>
+            <option value="International">International</option>
+        </select>
+        <select id="type" required>
+            <option value="">Select Type</option>
+            <option value="Normal">Normal</option>
+            <option value="Online">Online</option>
+        </select>
+        <button type="submit">Check Transaction</button>
+        <button type="button" id="downloadBtn">Download Report</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Amount</th>
+                <th>Time</th>
+                <th>Location</th>
+                <th>Type</th>
+                <th>Risk Score</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="transactionTable"></tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
